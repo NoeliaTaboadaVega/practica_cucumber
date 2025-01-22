@@ -11,4 +11,4 @@ plugins {
 }
 
 rootProject.name = 'practica_cucumber'
-include('app')
+
