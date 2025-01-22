@@ -16,28 +16,37 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit Jupiter for testing.
+    // Use JUnit Jupiter for testing. Viene por defecto la libreria 
     testImplementation libs.junit.jupiter
 
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    // This dependency is used by the application.
-    implementation libs.guava
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java te permite poder interactuar con los elemetos web de una pag
+    implementation 'org.seleniumhq.selenium:selenium-java:4.27.0'
+
+    // https://mvnrepository.com/artifact/org.testng/testng es una libreria para hacer assertions/validaciones
+    testImplementation 'org.testng:testng:7.10.2'
+
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java  nos habilita un paquete para tener todo ordenado en la doc viva
+    implementation 'io.cucumber:cucumber-java:7.20.1'
+
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
+    testImplementation 'io.cucumber:cucumber-junit:7.20.1'
+
+    // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+    implementation 'io.github.bonigarcia:webdrivermanager:5.9.2'
+
 }
 
-// Apply a specific Java toolchain to ease working on different environments.
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
-application {
-    // Define the main class for the application.
-    mainClass = 'practica_cucumber.App'
+test {
+    systemProperty 'file.encoding', 'UTF-8'
 }
+
 
 tasks.named('test') {
-    // Use JUnit Platform for unit tests.
-    useJUnitPlatform()
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
 }
