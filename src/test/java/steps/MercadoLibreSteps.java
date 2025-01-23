@@ -1,7 +1,7 @@
-package java.steps;
+package steps;
 
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -45,7 +45,9 @@ public class MercadoLibreSteps {
             "Construcción",
             "Deportes y Fitness", 
             "Accesorios para Vehículos",
-            "Moda","Juegos y Juguetes",
+            "Mascotas",
+            "Moda",
+            "Juegos y Juguetes",
             "Bebés",
             "Belleza y Cuidado Personal",
             "Salud y Equipamiento Médico",

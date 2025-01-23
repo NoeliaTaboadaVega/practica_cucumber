@@ -1,4 +1,4 @@
-package java.pages;
+package pages;
 
 import java.time.Duration;
 import java.util.ArrayList;
