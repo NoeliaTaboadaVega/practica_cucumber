@@ -11,7 +11,8 @@ import pages.BasePage;
 @CucumberOptions(
     features="src/test/resources", //Directorio de nuestros archivos .feature
     glue="steps", //Paquete donde tenemos nuestras clases definiendo los steps escritos en el feature file
-    plugin={"pretty","html:target/cucumber-reports"} //Donde queremos el reporte
+    plugin={"pretty","html:target/cucumber-reports"}, //Donde queremos el reporte
+    publish=true
 )
 public class TestRunner {
     @AfterClass
